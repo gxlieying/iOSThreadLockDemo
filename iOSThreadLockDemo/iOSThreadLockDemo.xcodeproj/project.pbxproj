@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D509A76821ED767400D6BC40 /* ThreadTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D509A76721ED767400D6BC40 /* ThreadTimeViewController.m */; };
 		D5A36B4321EC8167001B4ACD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A36B4221EC8167001B4ACD /* AppDelegate.m */; };
 		D5A36B4921EC8167001B4ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5A36B4721EC8167001B4ACD /* Main.storyboard */; };
 		D5A36B4B21EC816F001B4ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A36B4A21EC816F001B4ACD /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D509A76621ED767400D6BC40 /* ThreadTimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadTimeViewController.h; sourceTree = "<group>"; };
+		D509A76721ED767400D6BC40 /* ThreadTimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadTimeViewController.m; sourceTree = "<group>"; };
 		D5A36B3E21EC8167001B4ACD /* iOSThreadLockDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSThreadLockDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5A36B4121EC8167001B4ACD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D5A36B4221EC8167001B4ACD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -96,15 +99,17 @@
 			isa = PBXGroup;
 			children = (
 				D5A36B5A21EC8183001B4ACD /* LockViewController.h */,
-				D5A36B5B21EC8183001B4ACD /* PthreadViewController.m */,
-				D5A36B5C21EC8183001B4ACD /* SemaphoreViewController.h */,
-				D5A36B5D21EC8183001B4ACD /* OSSpinLockViewController.m */,
-				D5A36B5E21EC8183001B4ACD /* RwLockViewController.h */,
-				D5A36B5F21EC8183001B4ACD /* PthreadViewController.h */,
 				D5A36B6021EC8183001B4ACD /* LockViewController.m */,
 				D5A36B6121EC8183001B4ACD /* OSSpinLockViewController.h */,
-				D5A36B6221EC8183001B4ACD /* SemaphoreViewController.m */,
+				D5A36B5D21EC8183001B4ACD /* OSSpinLockViewController.m */,
+				D5A36B5F21EC8183001B4ACD /* PthreadViewController.h */,
+				D5A36B5B21EC8183001B4ACD /* PthreadViewController.m */,
+				D5A36B5E21EC8183001B4ACD /* RwLockViewController.h */,
 				D5A36B6321EC8183001B4ACD /* RwLockViewController.m */,
+				D5A36B5C21EC8183001B4ACD /* SemaphoreViewController.h */,
+				D5A36B6221EC8183001B4ACD /* SemaphoreViewController.m */,
+				D509A76621ED767400D6BC40 /* ThreadTimeViewController.h */,
+				D509A76721ED767400D6BC40 /* ThreadTimeViewController.m */,
 			);
 			path = "锁";
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5A36B6B21EC8183001B4ACD /* RwLockViewController.m in Sources */,
+				D509A76821ED767400D6BC40 /* ThreadTimeViewController.m in Sources */,
 				D5A36B6721EC8183001B4ACD /* PthreadViewController.m in Sources */,
 				D5A36B6621EC8183001B4ACD /* BaseViewController.m in Sources */,
 				D5A36B6C21EC8183001B4ACD /* RootViewController.m in Sources */,

@@ -180,7 +180,7 @@
 # 七、自旋锁
 > 自旋锁是为了防止多处理器并发而引入的一种锁，它是为实现保护共享资源而提出一种锁机制。其实，自旋锁与互斥锁比较类似，它们都是为了解决对某项资源的互斥使用。无论是互斥锁，还是自旋锁，在任何时刻，最多只能有一个保持者，也就说，在任何时刻最多只能有一个执行单元获得锁。但是两者在调度机制上略有不同。对于互斥锁，如果资源已经被占用，资源申请者只能进入睡眠状态。但是自旋锁不会引起调用者睡眠，如果自旋锁已经被别的执行单元保持，调用者就一直循环在那里看是否该自旋锁的保持者已经释放了锁，"自旋"一词就是因此而得名。
 
-## OSSpinLock(已弃用)
+## 1. OSSpinLock(已弃用)
 * OSSpinLock已不再安全，文章[《不再安全的OSSpinLock》](http://www.cocoachina.com/ios/20161115/18088.html)
 ```
     __block OSSpinLock lock = OS_SPINLOCK_INIT;
@@ -191,6 +191,21 @@
             OSSpinLockUnlock(&lock);
         }
     });
+```
+## 2. os_unfair_lock
+os_unfair_lock 是苹果官方推荐的替换OSSpinLock的方案，但是它在iOS10.0以上的系统开始支持。
+```
+- (void)unfairLock {
+
+    __block os_unfair_lock unfairLock = OS_UNFAIR_LOCK_INIT;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for (int i = 0; i <= 3; i++) {
+            os_unfair_lock_lock(&unfairLock);
+            NSLog(@"执行操作");
+            os_unfair_lock_unlock(&unfairLock);
+        }
+    });
+}
 ```
 
 # 八、ONCE（只执行一次）

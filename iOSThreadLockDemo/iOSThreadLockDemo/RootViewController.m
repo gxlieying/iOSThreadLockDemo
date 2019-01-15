@@ -12,6 +12,7 @@
 #import "PthreadViewController.h"
 #import "SemaphoreViewController.h"
 #import "LockViewController.h"
+#import "ThreadTimeViewController.h"
 
 @interface RootViewController ()
 
@@ -25,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.dataArr addObjectsFromArray:@[@"自旋锁",@"互斥锁、条件锁、递归锁",@"读写锁",@"只执行一次",@"信号量",@"pthread"]];
+    [self.dataArr addObjectsFromArray:@[@"自旋锁",@"互斥锁、条件锁、递归锁",@"读写锁",@"只执行一次",@"信号量",@"pthread",@"时间比较"]];
     
     __weak typeof(self) weakSelf = self;
     self.itemOperation = ^(NSIndexPath * _Nonnull indexPath) {
@@ -47,6 +48,9 @@
         } else if ([temp isEqualToString:@"pthread"]) {
             PthreadViewController *pthreadVC = [[PthreadViewController alloc] init];
             [weakSelf.navigationController pushViewController:pthreadVC animated:YES];
+        } else if ([temp isEqualToString:@"时间比较"]) {
+            ThreadTimeViewController *timeVC = [[ThreadTimeViewController alloc] init];
+            [weakSelf.navigationController pushViewController:timeVC animated:YES];
         }
     };
 }
